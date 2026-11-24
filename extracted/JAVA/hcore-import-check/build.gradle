@@ -1,0 +1,57 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url 'https://maven.google.com' }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.2.1'
+    }
+}
+
+apply plugin: 'com.android.application'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url 'https://maven.google.com' }
+}
+
+android {
+    namespace 'com.example.hcoreimportcheck'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'com.example.hcoreimportcheck'
+        minSdk 24
+        targetSdk 34
+    }
+}
+
+def hCoreAar = providers.gradleProperty('hcoreAar')
+        .orElse(new File(System.getProperty('user.home'), 'Downloads/hCore-release.aar').path)
+def hCoreClasses = layout.buildDirectory.file('hcore-classes/classes.jar')
+def extractHCoreClasses = tasks.register('extractHCoreClasses') {
+    inputs.file(hCoreAar)
+    outputs.file(hCoreClasses)
+
+    doLast {
+        new java.util.zip.ZipFile(file(hCoreAar.get())).withCloseable { archive ->
+            def classes = archive.getEntry('classes.jar')
+            if (classes == null) {
+                throw new GradleException('The hCore AAR is missing classes.jar')
+            }
+
+            def output = hCoreClasses.get().asFile.toPath()
+            java.nio.file.Files.createDirectories(output.parent)
+            archive.getInputStream(classes).withCloseable { input ->
+                java.nio.file.Files.copy(input, output, java.nio.file.StandardCopyOption.REPLACE_EXISTING)
+            }
+        }
+    }
+}
+
+dependencies {
+    compileOnly(files(hCoreClasses).builtBy(extractHCoreClasses))
+}
