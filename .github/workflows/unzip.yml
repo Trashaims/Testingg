@@ -7,11 +7,14 @@ jobs:
   unzip:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Extract
         run: |
-          unzip -o source.zip -d extracted
-          rm source.zip
+          set -e
+          ZIP=$(ls -1 *.zip | head -n1)
+          echo "extracting $ZIP"
+          unzip -o "$ZIP" -d extracted
+          rm "$ZIP"
       - name: Commit
         run: |
           git config user.name "github-actions"
