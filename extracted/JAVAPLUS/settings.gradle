@@ -1,0 +1,5 @@
+
+rootProject.name = "Tdr Loader"
+include ':app'
+include ':Zcore'
+

@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <!-- Title Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="8dp"
+        android:layout_marginHorizontal="4dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AIMBOT CONFIG"
+            android:textColor="@color/text_white"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lock-on, tracking, and recoil compensation"
+            android:textColor="@color/text_dim"
+            android:textSize="9sp"
+            android:layout_marginTop="1dp" />
+    </LinearLayout>
+
+    <!-- Premium Restriction Message -->
+    <TextView
+        android:id="@+id/aimpre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="12dp"
+        android:gravity="center"
+        android:text="@string/please_upgrade_to_premium"
+        android:textColor="@color/red"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <!-- Main Aim Section -->
+    <LinearLayout
+        android:id="@+id/aimsec"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="10dp">
+
+                <!-- Section: MAIN CONFIG -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="MAIN CONFIG"
+                    android:textColor="@color/glow_orange"
+                    android:textSize="9sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginStart="4dp" />
+
+                   <!-- Master Aimbot Switch -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:background="@drawable/menu_item_bg"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="10dp"
+                    android:visibility="gone">   <!-- AIM BOTTON OFF -->
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/aim_bot_3_0"
+                        android:textColor="@color/text_white"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <Switch
+                        android:id="@+id/aim_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:thumbTint="@color/text_white"
+                        android:trackTint="@color/glow_orange" />
+                </LinearLayout>
+
+                <!-- Bullet Tracking Switch -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:background="@drawable/menu_item_bg"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="10dp"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/bullet_tracking"
+                        android:textColor="@color/text_white"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <Switch
+                        android:id="@+id/aimbullet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:thumbTint="@color/text_white"
+                        android:trackTint="@color/glow_orange" />
+                </LinearLayout>
+
+                <!-- Section: OTHER SETTINGS -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="OTHER SETTINGS"
+                    android:textColor="@color/glow_orange"
+                    android:textSize="9sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginStart="4dp" />
+
+                <!-- Ignore Knocked & Ignore Bot Card -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/menu_item_bg"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="4dp"
+                    android:layout_marginBottom="12dp">
+
+                    <!-- Ignore Knocked -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ignore_knocked"
+                            android:textColor="@color/text_white"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                        <Switch
+                            android:id="@+id/aimknocked"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:thumbTint="@color/text_white"
+                            android:trackTint="@color/glow_orange" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/glow_border" />
+
+                    <!-- Ignore Bot -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/ignore_bot"
+                            android:textColor="@color/text_white"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                        <Switch
+                            android:id="@+id/aimignorebot"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:thumbTint="@color/text_white"
+                            android:trackTint="@color/glow_orange" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Section: RANGE & PERFORMANCE -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="RANGE &amp; PERFORMANCE"
+                    android:textColor="@color/glow_orange"
+                    android:textSize="9sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginStart="4dp" />
+
+                <!-- Range & Distance Card -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/menu_item_bg"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:layout_marginBottom="10dp">
+
+                    <!-- Aiming Range -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/aiming_range"
+                            android:textColor="@color/text_white"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/rangetext"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="300"
+                            android:textColor="@color/glow_orange"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <SeekBar
+                        android:id="@+id/range"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:max="300"
+                        android:progress="300"
+                        android:progressTint="@color/glow_orange"
+                        android:thumbTint="@color/glow_orange"
+                        android:layout_marginBottom="8dp"
+                        android:paddingStart="4dp"
+                        android:paddingEnd="4dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/glow_border"
+                        android:layout_marginBottom="8dp" />
+
+                    <!-- Aiming Distance -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/aiming_distance"
+                            android:textColor="@color/text_white"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/distancetext"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="300"
+                            android:textColor="@color/glow_orange"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <SeekBar
+                        android:id="@+id/distances"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:max="400"
+                        android:progress="300"
+                        android:progressTint="@color/glow_orange"
+                        android:thumbTint="@color/glow_orange"
+                        android:paddingStart="4dp"
+                        android:paddingEnd="4dp" />
+                </LinearLayout>
+
+                <!-- Speed & Recoil Card -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/menu_item_bg"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:layout_marginBottom="12dp">
+
+                    <!-- Aiming Speed -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="2dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/aiming_speed"
+                            android:textColor="@color/text_white"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/bulletspeedtext"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="@color/glow_orange"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <SeekBar
+                        android:id="@+id/bulletspeed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:progress="50"
+                        android:progressTint="@color/glow_orange"
+                        android:thumbTint="@color/glow_orange"
+                        android:layout_marginBottom="8dp"
+                        android:paddingStart="4dp"
+                        android:paddingEnd="4dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/glow_border"
+                        android:layout_marginBottom="8dp" />
+
+                    <!-- Recoil Compensation -->
+                    <LinearLayout
+                        android:id="@+id/recoilmenu2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="2dp">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/recoil_compesation"
+                                android:textColor="@color/text_white"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/recoiltext2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="@color/glow_orange"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                        <SeekBar
+                            android:id="@+id/Recoil2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:max="100"
+                            android:progress="50"
+                            android:progressTint="@color/glow_orange"
+                            android:thumbTint="@color/glow_orange"
+                            android:paddingStart="4dp"
+                            android:paddingEnd="4dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Section: TARGET & PRIORITY -->
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="TARGET &amp; PRIORITY"
+    android:textColor="@color/glow_orange"
+    android:textSize="9sp"
+    android:textStyle="bold"
+    android:layout_marginBottom="6dp"
+    android:layout_marginStart="4dp"
+    android:visibility="gone" /> <!-- OFF -->
+
+<!-- Radio Options Card -->
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/menu_item_bg"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:layout_marginBottom="10dp"
+    android:visibility="gone"> <!-- OFF -->
+
+    <!-- Target Aiming -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/target_aiming"
+        android:textColor="@color/text_dim"
+        android:textSize="9sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp"
+        android:visibility="gone" /> <!-- OFF -->
+
+    <RadioGroup
+        android:id="@+id/aimbotmode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:visibility="gone"> <!-- OFF -->
+        <RadioButton android:id="@+id/radioButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/esp_aimbot_radioButton_text" android:textColor="@color/text_white" android:textSize="9sp" android:buttonTint="@color/glow_orange" android:tag="1" android:layout_marginHorizontal="6dp" android:visibility="gone"/>
+        <RadioButton android:id="@+id/radioButton2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/esp_aimbot_radioButton2_text" android:textColor="@color/text_white" android:textSize="9sp" android:buttonTint="@color/glow_orange" android:tag="2" android:layout_marginHorizontal="6dp" android:visibility="gone"/>
+        <RadioButton android:id="@+id/radioButton3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/esp_aimbot_radioButton3_text" android:textColor="@color/text_white" android:textSize="9sp" android:buttonTint="@color/glow_orange" android:tag="3" android:layout_marginHorizontal="6dp" android:visibility="gone"/>
+    </RadioGroup>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/glow_border"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" /> <!-- OFF -->
+
+    <!-- Aiming Priority -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/aiming_priority"
+        android:textColor="@color/text_dim"
+        android:textSize="9sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp"
+        android:visibility="gone" /> <!-- OFF -->
+
+    <RadioGroup
+        android:id="@+id/aimby"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:visibility="gone"> <!-- OFF -->
+        <RadioButton android:id="@+id/radioButton9" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/esp_aimbot_radioButton9_text" android:textColor="@color/text_white" android:textSize="9sp" android:buttonTint="@color/glow_orange" android:tag="0" android:layout_marginHorizontal="12dp" android:visibility="gone"/>
+        <RadioButton android:id="@+id/radioButton4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/esp_aimbot_radioButton4_text" android:textColor="@color/text_white" android:textSize="9sp" android:buttonTint="@color/glow_orange" android:tag="1" android:layout_marginHorizontal="12dp" android:visibility="gone"/>
+    </RadioGroup>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/glow_border"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" /> <!-- OFF -->
+
+    <!-- Aim Trigger Mode -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/aim_trigger_mode"
+        android:textColor="@color/text_dim"
+        android:textSize="9sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp"
+        android:visibility="gone" /> <!-- OFF -->
+
+    <RadioGroup
+        android:id="@+id/aimwhen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="start"
+        android:layout_marginStart="8dp"
+        android:visibility="gone"> <!-- OFF -->
+        <RadioButton android:id="@+id/radioButton5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/esp_aimbot_radioButton5_text" android:textColor="@color/text_white" android:textSize="9sp" android:buttonTint="@color/glow_orange" android:tag="0" android:layout_marginVertical="2dp" android:visibility="gone"/>
+        <RadioButton android:id="@+id/radioButton6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/esp_aimbot_radioButton6_text" android:textColor="@color/text_white" android:textSize="9sp" android:buttonTint="@color/glow_orange" android:tag="1" android:layout_marginVertical="2dp" android:visibility="gone"/>
+        <RadioButton android:id="@+id/radioButton7" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/esp_aimbot_radioButton7_text" android:textColor="@color/text_white" android:textSize="9sp" android:buttonTint="@color/glow_orange" android:tag="2" android:layout_marginVertical="2dp" android:visibility="gone"/>
+    </RadioGroup>
+</LinearLayout>
+
+                <!-- Hidden/Compatibility fields kept in zero-height container -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                    <TextView android:id="@+id/texttouch" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <LinearLayout android:id="@+id/recoilmenu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" />
+                    <Switch android:id="@+id/rotationscren" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <SeekBar android:id="@+id/Recoil" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <SeekBar android:id="@+id/Recoils2" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:id="@+id/recoiltext" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:id="@+id/recoiltexts2" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>

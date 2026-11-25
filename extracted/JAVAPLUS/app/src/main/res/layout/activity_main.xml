@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:background="#0A0A0A"
+     android:orientation="vertical">
+
+    <ScrollView
+         android:layout_height="0dp"
+         android:layout_width="match_parent"
+         android:padding="16dp"
+         android:layout_weight="1"
+         android:background="#0A0A0A">
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:orientation="vertical"
+             android:background="#0A0A0A">
+
+            <!-- App Title with hacker style -->
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:layout_marginBottom="16dp"
+                 android:textSize="28sp"
+                 android:textColor="#00FF00"
+                 android:text="IronGate TERMINAL"
+                 android:textStyle="bold"
+                 android:fontFamily="monospace"
+                 android:letterSpacing="0.1" />
+
+            <!-- License Countdown Card -->
+            <LinearLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:layout_marginBottom="16dp"
+                 android:background="#111111"
+                 android:elevation="8dp"
+                 android:padding="16dp"
+                 android:orientation="vertical">
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:layout_marginBottom="8dp"
+                     android:textSize="16sp"
+                     android:textColor="#00FF00"
+                     android:id="@+id/licenseTitle"
+                     android:text="[SYSTEM] LICENSE EXPIRY"
+                     android:textStyle="bold"
+                     android:fontFamily="monospace" />
+
+                <LinearLayout
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:gravity="center"
+                     android:orientation="horizontal">
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="wrap_content"
+                         android:textSize="18sp"
+                         android:textColor="#00FF00"
+                         android:id="@+id/tvD"
+                         android:text="00"
+                         android:textStyle="bold"
+                         android:fontFamily="monospace" />
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="wrap_content"
+                         android:text="d "
+                         android:textColor="#00FF00"
+                         android:fontFamily="monospace" />
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="wrap_content"
+                         android:textSize="18sp"
+                         android:textColor="#00FF00"
+                         android:layout_marginStart="8dp"
+                         android:id="@+id/tvH"
+                         android:text="00"
+                         android:textStyle="bold"
+                         android:fontFamily="monospace" />
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="wrap_content"
+                         android:text="h "
+                         android:textColor="#00FF00"
+                         android:fontFamily="monospace" />
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="wrap_content"
+                         android:textSize="18sp"
+                         android:textColor="#00FF00"
+                         android:layout_marginStart="8dp"
+                         android:id="@+id/tvM"
+                         android:text="00"
+                         android:textStyle="bold"
+                         android:fontFamily="monospace" />
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="wrap_content"
+                         android:text="m "
+                         android:textColor="#00FF00"
+                         android:fontFamily="monospace" />
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="wrap_content"
+                         android:textSize="18sp"
+                         android:textColor="#00FF00"
+                         android:layout_marginStart="8dp"
+                         android:id="@+id/tvS"
+                         android:text="00"
+                         android:textStyle="bold"
+                         android:fontFamily="monospace" />
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="wrap_content"
+                         android:text="s"
+                         android:textColor="#00FF00"
+                         android:fontFamily="monospace" />
+
+                </LinearLayout>
+
+                <!-- Status line -->
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textSize="10sp"
+                     android:textColor="#008800"
+                     android:layout_marginTop="8dp"
+                     android:text="[STATUS] SYSTEM ACTIVE | ENCRYPTED"
+                     android:fontFamily="monospace" />
+
+            </LinearLayout>
+
+            <!-- Progress Card -->
+            <LinearLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:visibility="gone"
+                 android:background="#111111"
+                 android:elevation="8dp"
+                 android:padding="16dp"
+                 android:orientation="vertical"
+                 android:id="@+id/progressCard">
+
+                <ProgressBar
+                     android:layout_height="4dp"
+                     android:layout_width="match_parent"
+                     android:max="100"
+                     android:indeterminate="false"
+                     android:progressTint="#00FF00"
+                     android:progressBackgroundTint="#003300"
+                     style="?android:attr/progressBarStyleHorizontal"
+                     android:id="@+id/progressBar" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textSize="12sp"
+                     android:textColor="#00FF00"
+                     android:layout_marginTop="8dp"
+                     android:id="@+id/progressText"
+                     android:text="[INIT] Preparing system..."
+                     android:fontFamily="monospace" />
+
+            </LinearLayout>
+
+            <!-- Game Card - BGMI -->
+            <LinearLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:layout_marginBottom="12dp"
+                 android:background="#111111"
+                 android:elevation="8dp"
+                 android:padding="12dp"
+                 android:orientation="horizontal">
+
+                <ImageView
+                     android:layout_height="50dp"
+                     android:layout_width="50dp"
+                     android:src="@drawable/india"
+                     android:contentDescription="BGMI"
+                     android:background="@drawable/neon_circle" />
+
+                <LinearLayout
+                     android:layout_height="wrap_content"
+                     android:layout_width="0dp"
+                     android:orientation="vertical"
+                     android:layout_marginStart="12dp"
+                     android:layout_weight="1">
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="wrap_content"
+                         android:textSize="16sp"
+                         android:textColor="#00FF00"
+                         android:text="BATTLEGROUND MOBILE INDIA"
+                         android:textStyle="bold"
+                         android:fontFamily="monospace" />
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="wrap_content"
+                         android:textSize="10sp"
+                         android:textColor="#008800"
+                         android:text="com.pubg.imobile | STATUS: ONLINE"
+                         android:fontFamily="monospace" />
+
+                </LinearLayout>
+
+                <Button
+                     android:layout_height="36dp"
+                     android:layout_width="80dp"
+                     android:backgroundTint="#00FF00"
+                     android:textAllCaps="false"
+                     android:textColor="#0A0A0A"
+                     android:id="@+id/startBgmi"
+                     android:text="LAUNCH"
+                     android:textStyle="bold"
+                     android:fontFamily="monospace"
+                     android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <!-- System Info -->
+            <LinearLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:background="#111111"
+                 android:elevation="4dp"
+                 android:padding="12dp"
+                 android:orientation="vertical"
+                 android:layout_marginTop="8dp">
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textSize="12sp"
+                     android:textColor="#00FF00"
+                     android:text="[SYSTEM INFO]"
+                     android:textStyle="bold"
+                     android:fontFamily="monospace" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textSize="10sp"
+                     android:textColor="#008800"
+                     android:layout_marginTop="4dp"
+                     android:text="• CONNECTION: ENCRYPTED"
+                     android:fontFamily="monospace" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textSize="10sp"
+                     android:textColor="#008800"
+                     android:text="• MODE: STEALTH"
+                     android:fontFamily="monospace" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textSize="10sp"
+                     android:textColor="#008800"
+                     android:text="• PROTOCOL: ACTIVE"
+                     android:fontFamily="monospace" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Terminal Footer -->
+    <TextView
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:background="#001100"
+         android:padding="8dp"
+         android:textSize="10sp"
+         android:textColor="#008800"
+         android:gravity="center"
+         android:text="IronGate TERMINAL v2.4.7 | [SECURE] | © 2024"
+         android:fontFamily="monospace" />
+
+</LinearLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- White Background with Green Border -->
+    <item>
+        <shape>
+            <solid android:color="#FFFFFF" />
+            <stroke android:width="2.5dp" android:color="@color/lite_green" />
+            <corners android:radius="4dp" />
+            <size android:width="20dp" android:height="20dp" />
+        </shape>
+    </item>
+    <!-- Green Checkmark Icon centered -->
+    <item
+        android:drawable="@drawable/ic_checkmark_green"
+        android:top="3dp"
+        android:bottom="3dp"
+        android:left="3dp"
+        android:right="3dp" />
+</layer-list>

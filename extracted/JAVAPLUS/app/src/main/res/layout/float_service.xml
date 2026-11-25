@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="start|top"
+    tools:ignore="HardcodedText, UseSwitchCompatOrMaterialXml, UselessParent, TooManyViews">
+
+    <!-- Outer Horizontal Layout -->
+    <LinearLayout
+        android:id="@+id/layout_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="5dp">
+
+        <!-- Sidebar Layout - Tall & Clean -->
+        <LinearLayout
+            android:id="@+id/sidebar_container"
+            android:layout_width="70dp"
+            android:layout_height="305dp"
+            android:orientation="vertical"
+            android:background="@drawable/sidebar_bg"
+            android:paddingVertical="10dp"
+            android:gravity="center_horizontal"
+            android:layout_marginEnd="10dp">
+
+            <!-- Winged Crest Logo at Top -->
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_crest"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="14dp" />
+
+            <!-- AIMBOT Tab -->
+            <LinearLayout
+                android:id="@+id/navf3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingVertical="8dp"
+                android:layout_marginHorizontal="6dp"
+                android:layout_marginVertical="3dp"
+                android:background="@drawable/nav_item_selector"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_target"
+                    android:tint="@color/sidebar_tint_selector"
+                    android:duplicateParentState="true" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AIMBOT"
+                    android:textColor="@color/sidebar_tint_selector"
+                    android:textSize="8sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="3dp"
+                    android:duplicateParentState="true" />
+            </LinearLayout>
+
+            <!-- ESP Tab (Default selected) -->
+            <LinearLayout
+                android:id="@+id/navf1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingVertical="8dp"
+                android:layout_marginHorizontal="6dp"
+                android:layout_marginVertical="3dp"
+                android:background="@drawable/nav_item_selector"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/esp"
+                    android:tint="@color/sidebar_tint_selector"
+                    android:duplicateParentState="true" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ESP"
+                    android:textColor="@color/sidebar_tint_selector"
+                    android:textSize="8sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="3dp"
+                    android:duplicateParentState="true" />
+            </LinearLayout>
+
+            <!-- MISC Tab -->
+            <LinearLayout
+                android:id="@+id/navf4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingVertical="8dp"
+                android:layout_marginHorizontal="6dp"
+                android:layout_marginVertical="3dp"
+                android:background="@drawable/nav_item_selector"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/outline_settings_24"
+                    android:tint="@color/sidebar_tint_selector"
+                    android:duplicateParentState="true" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MISC"
+                    android:textColor="@color/sidebar_tint_selector"
+                    android:textSize="8sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="3dp"
+                    android:duplicateParentState="true" />
+            </LinearLayout>
+
+            <!-- Spacer to push EXIT to bottom -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <!-- EXIT Tab -->
+            <LinearLayout
+                android:id="@+id/layout_close_main_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingVertical="8dp"
+                android:layout_marginHorizontal="6dp"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_exit"
+                    android:tint="@color/sidebar_tint_selector"
+                    android:duplicateParentState="true" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="EXIT"
+                    android:textColor="@color/sidebar_tint_selector"
+                    android:textSize="8sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="3dp"
+                    android:duplicateParentState="true" />
+            </LinearLayout>
+
+            <!-- Hidden Indicator Views required by FloatService.java -->
+            <View android:id="@+id/head1" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+            <View android:id="@+id/head2" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+            <View android:id="@+id/head3" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+            <View android:id="@+id/head4" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+            <View android:id="@+id/head5" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+            <LinearLayout android:id="@+id/navf2" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" android:orientation="vertical" />
+            <LinearLayout android:id="@+id/navf5" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" android:orientation="vertical" />
+            <LinearLayout android:id="@+id/navitems" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" android:orientation="vertical" />
+            <LinearLayout android:id="@+id/navvehicle" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" android:orientation="vertical" />
+
+        </LinearLayout>
+
+        <!-- Right Side Panel: Main Menu Container + Bottom status bar -->
+        <LinearLayout
+            android:layout_width="320dp"
+            android:layout_height="305dp"
+            android:orientation="vertical">
+
+            <!-- Main Panel -->
+            <LinearLayout
+                android:id="@+id/layout_main_view"
+                android:layout_width="match_parent"
+                android:layout_height="245dp"
+                android:orientation="vertical"
+                android:background="@drawable/menu_bg"
+                android:padding="5dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/menuf1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+                        <include layout="@layout/esp_visual" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/menuf2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+                        <include layout="@layout/esp_inventory" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/menuf3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+                        <include layout="@layout/esp_aimbot" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/menuf4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+                        <include layout="@layout/esp_memory" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/menuf5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+                        <include layout="@layout/esp_skin" />
+                    </LinearLayout>
+
+                    <!-- Hidden helper layout inclusions required by FloatService.java -->
+                    <LinearLayout android:id="@+id/items1" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" android:orientation="vertical" />
+                    <LinearLayout android:id="@+id/lyvehicle" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" android:orientation="vertical" />
+                    <View android:id="@+id/bottomi1" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+                    <View android:id="@+id/bottomi2" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+
+                </FrameLayout>
+            </LinearLayout>
+
+            <!-- Bottom Status Bar -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:weightSum="3">
+
+                <!-- ESP Status Card -->
+                <LinearLayout
+                    android:id="@+id/card_esp_status"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/bottom_card_status_bg"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="6dp"
+                    android:layout_marginEnd="4dp">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_pulse"
+                        android:layout_marginEnd="6dp" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ESP STATUS"
+                            android:textColor="@color/text_dim"
+                            android:textSize="7sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Active"
+                            android:textColor="@color/glow_orange"
+                            android:textSize="9sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="1dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Players Count Card -->
+                <LinearLayout
+                    android:id="@+id/card_players"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/bottom_card_normal_bg"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="6dp"
+                    android:layout_marginHorizontal="2dp">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_group"
+                        android:layout_marginEnd="6dp" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PLAYERS"
+                            android:textColor="@color/text_dim"
+                            android:textSize="7sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="8"
+                            android:textColor="@color/text_white"
+                            android:textSize="9sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="1dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Safe Mode Card -->
+                <LinearLayout
+                    android:id="@+id/card_safe_mode"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/bottom_card_normal_bg"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="6dp"
+                    android:layout_marginStart="4dp">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/outline_gpp_good_24"
+                        android:tint="#10B981"
+                        android:layout_marginEnd="6dp" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="SAFE MODE"
+                            android:textColor="@color/text_dim"
+                            android:textSize="7sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Secure"
+                            android:textColor="@color/text_white"
+                            android:textSize="9sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="1dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Floating Logo when minimized -->
+    <RelativeLayout
+        android:id="@+id/layout_icon_control_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+        <ImageView
+            android:id="@+id/imageview_control"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/ic_launcher" />
+    </RelativeLayout>
+
+</FrameLayout>

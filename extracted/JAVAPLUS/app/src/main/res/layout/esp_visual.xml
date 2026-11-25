@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <!-- Header layout: Title/Subtitle on Left, Master Switch on Right -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="8dp"
+        android:layout_marginHorizontal="4dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ESP VISUALS"
+                android:textColor="@color/text_white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Customize what you want to see in game"
+                android:textColor="@color/text_dim"
+                android:textSize="9sp"
+                android:layout_marginTop="1dp" />
+        </LinearLayout>
+
+        <!-- Master ESP Switch -->
+        <Switch
+            android:id="@+id/isenableesp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:thumbTint="@color/text_white"
+            android:trackTint="@color/glow_orange" />
+    </LinearLayout>
+
+    <!-- Scrollable Settings Checklist -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="10dp">
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:alignmentMode="alignMargins">
+
+                <!-- 2D BOX -->
+                <CheckBox
+                    android:id="@+id/isBox"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="40dp"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/menu_item_bg"
+                    android:button="@null"
+                    android:drawableStart="@drawable/ic_cube"
+                    android:drawableEnd="@drawable/custom_switch_selector"
+                    android:drawablePadding="6dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:gravity="center_vertical"
+                    android:text="2D BOX"
+                    android:textColor="@color/text_white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <!-- LINES -->
+                <CheckBox
+                    android:id="@+id/isline"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="40dp"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/menu_item_bg"
+                    android:button="@null"
+                    android:drawableStart="@drawable/ic_angle_line"
+                    android:drawableEnd="@drawable/custom_switch_selector"
+                    android:drawablePadding="6dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:gravity="center_vertical"
+                    android:text="LINES"
+                    android:textColor="@color/text_white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <!-- SKELETON -->
+                <CheckBox
+                    android:id="@+id/isskeleton"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="40dp"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/menu_item_bg"
+                    android:button="@null"
+                    android:drawableStart="@drawable/ic_skeleton"
+                    android:drawableEnd="@drawable/custom_switch_selector"
+                    android:drawablePadding="6dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:gravity="center_vertical"
+                    android:text="SKELETON"
+                    android:textColor="@color/text_white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <!-- HEAD CIRCLE -->
+                <CheckBox
+                    android:id="@+id/ishead"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="40dp"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/menu_item_bg"
+                    android:button="@null"
+                    android:drawableStart="@drawable/ic_head_circle"
+                    android:drawableEnd="@drawable/custom_switch_selector"
+                    android:drawablePadding="6dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:gravity="center_vertical"
+                    android:text="HEAD CIRCLE"
+                    android:textColor="@color/text_white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <!-- PLAYER NAME -->
+                <CheckBox
+                    android:id="@+id/isName"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="40dp"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/menu_item_bg"
+                    android:button="@null"
+                    android:drawableStart="@drawable/ic_user"
+                    android:drawableEnd="@drawable/custom_switch_selector"
+                    android:drawablePadding="6dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:gravity="center_vertical"
+                    android:text="PLAYER NAME"
+                    android:textColor="@color/text_white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <!-- HEALTH BAR -->
+                <CheckBox
+                    android:id="@+id/ishealth"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="40dp"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/menu_item_bg"
+                    android:button="@null"
+                    android:drawableStart="@drawable/ic_heart_pulse"
+                    android:drawableEnd="@drawable/custom_switch_selector"
+                    android:drawablePadding="6dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:gravity="center_vertical"
+                    android:text="HEALTH BAR"
+                    android:textColor="@color/text_white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <!-- DISTANCE -->
+                <CheckBox
+                    android:id="@+id/isdistance"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="40dp"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/menu_item_bg"
+                    android:button="@null"
+                    android:drawableStart="@drawable/ic_ruler"
+                    android:drawableEnd="@drawable/custom_switch_selector"
+                    android:drawablePadding="6dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:gravity="center_vertical"
+                    android:text="DISTANCE"
+                    android:textColor="@color/text_white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <!-- WEAPON -->
+                <CheckBox
+                    android:id="@+id/isweapon"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="40dp"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/menu_item_bg"
+                    android:button="@null"
+                    android:drawableStart="@drawable/ic_pistol"
+                    android:drawableEnd="@drawable/custom_switch_selector"
+                    android:drawablePadding="6dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:gravity="center_vertical"
+                    android:text="WEAPON"
+                    android:textColor="@color/text_white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <!-- ALERT (360 Alert) -->
+                <CheckBox
+                    android:id="@+id/isalert"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="40dp"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/menu_item_bg"
+                    android:button="@null"
+                    android:drawableStart="@drawable/ic_bell"
+                    android:drawableEnd="@drawable/custom_switch_selector"
+                    android:drawablePadding="6dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:gravity="center_vertical"
+                    android:text="ALERT"
+                    android:textColor="@color/text_white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <!-- WEAPON ICON -->
+                <CheckBox
+                    android:id="@+id/isweaponicon"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="40dp"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/menu_item_bg"
+                    android:button="@null"
+                    android:drawableStart="@drawable/ic_rifle"
+                    android:drawableEnd="@drawable/custom_switch_selector"
+                    android:drawablePadding="6dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:gravity="center_vertical"
+                    android:text="WEAPON ICON"
+                    android:textColor="@color/text_white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <!-- THROWABLES (Grenades) -->
+                <CheckBox
+                    android:id="@+id/isthrowables"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="40dp"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/menu_item_bg"
+                    android:button="@null"
+                    android:drawableStart="@drawable/ic_grenade"
+                    android:drawableEnd="@drawable/custom_switch_selector"
+                    android:drawablePadding="6dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:gravity="center_vertical"
+                    android:text="THROWABLES"
+                    android:textColor="@color/text_white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <!-- HIDE BOT (Ignore Bots) -->
+                <CheckBox
+                    android:id="@+id/isnobot"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="40dp"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/menu_item_bg"
+                    android:button="@null"
+                    android:drawableStart="@drawable/ic_robot"
+                    android:drawableEnd="@drawable/custom_switch_selector"
+                    android:drawablePadding="6dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:gravity="center_vertical"
+                    android:text="HIDE BOT"
+                    android:textColor="@color/text_white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <!-- ELECTRIC -->
+                <CheckBox
+                    android:id="@+id/isPlayerElectric"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="40dp"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/menu_item_bg"
+                    android:button="@null"
+                    android:drawableStart="@drawable/ic_thunder"
+                    android:drawableEnd="@drawable/custom_switch_selector"
+                    android:drawablePadding="6dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:gravity="center_vertical"
+                    android:text="ELECTRIC"
+                    android:textColor="@color/text_white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <!-- AURA -->
+                <CheckBox
+                    android:id="@+id/isaura"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="40dp"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/menu_item_bg"
+                    android:button="@null"
+                    android:drawableStart="@drawable/ic_sparkle"
+                    android:drawableEnd="@drawable/custom_switch_selector"
+                    android:drawablePadding="6dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:gravity="center_vertical"
+                    android:text="AURA"
+                    android:textColor="@color/text_white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <!-- LOOT BOX -->
+                <CheckBox
+                    android:id="@+id/islootbox"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_height="40dp"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/menu_item_bg"
+                    android:button="@null"
+                    android:drawableStart="@drawable/ic_crate"
+                    android:drawableEnd="@drawable/custom_switch_selector"
+                    android:drawablePadding="6dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:gravity="center_vertical"
+                    android:text="LOOT BOX"
+                    android:textColor="@color/text_white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+            </GridLayout>
+
+            <!-- Keep Bypass/Settings Compatibility Views hidden in zero-height container -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <LinearLayout android:id="@+id/menuloho" android:layout_width="wrap_content" android:layout_height="wrap_content"><ImageView android:id="@+id/imgfixed" android:layout_width="wrap_content" android:layout_height="wrap_content"/><Switch android:id="@+id/isfixed" android:layout_width="wrap_content" android:layout_height="wrap_content"/></LinearLayout>
+                <LinearLayout android:id="@+id/menucrash" android:layout_width="wrap_content" android:layout_height="wrap_content"><Switch android:id="@+id/iscrash" android:layout_width="wrap_content" android:layout_height="wrap_content"/></LinearLayout>
+                <LinearLayout android:id="@+id/menuisland" android:layout_width="wrap_content" android:layout_height="wrap_content"><ImageView android:id="@+id/imgisland" android:layout_width="wrap_content" android:layout_height="wrap_content"/><Switch android:id="@+id/isisland" android:layout_width="wrap_content" android:layout_height="wrap_content"/></LinearLayout>
+                <SeekBar android:id="@+id/strokeradar" android:layout_width="wrap_content" android:layout_height="wrap_content"/><TextView android:id="@+id/radartext" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

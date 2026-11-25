@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Selected/Active State: Translucent Orange Card with Glowing Orange Border -->
+    <item android:state_selected="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#26FF7A00" />
+            <stroke android:width="1.5dp" android:color="@color/glow_orange" />
+            <corners android:radius="10dp" />
+        </shape>
+    </item>
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#26FF7A00" />
+            <stroke android:width="1.5dp" android:color="@color/glow_orange" />
+            <corners android:radius="10dp" />
+        </shape>
+    </item>
+    <!-- Inactive State: Transparent Background (No Border) -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#00000000" />
+            <corners android:radius="10dp" />
+        </shape>
+    </item>
+</selector>

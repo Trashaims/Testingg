@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient_orange">
+
+    <!-- Logo aur Title Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="50dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:background="@drawable/circle_orange_glow"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_launcher"
+                android:alpha="0.9" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="WELCOME TO BGMI"
+            android:textColor="#FF6600"
+            android:textSize="22sp"
+            android:fontFamily="@font/pixel"
+            android:textStyle="bold"
+            android:letterSpacing="0.1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ESP VISUAL SYSTEM v3.0"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp"
+            android:fontFamily="@font/pixel"
+            android:alpha="0.7" />
+    </LinearLayout>
+
+    <!-- Main Card -->
+    <LinearLayout
+        android:id="@+id/loginCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="20dp"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:background="@drawable/card_rounded_dark"
+        android:elevation="10dp">
+
+        <!-- Status Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="28dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="2">
+
+            <!-- ESP STATUS -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:background="@drawable/dot_orange"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ESP STATUS:"
+                    android:textColor="#FFFFFF"
+                    android:textSize="10sp"
+                    android:fontFamily="@font/pixel"
+                    android:alpha="0.8" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="ACTIVE"
+                    android:textColor="#FF6600"
+                    android:textSize="10sp"
+                    android:fontFamily="@font/pixel"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- SAFE MODE -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:background="@drawable/dot_white"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SAFE MODE:"
+                    android:textColor="#FFFFFF"
+                    android:textSize="10sp"
+                    android:fontFamily="@font/pixel"
+                    android:alpha="0.8" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="SECURE"
+                    android:textColor="#FFFFFF"
+                    android:textSize="10sp"
+                    android:fontFamily="@font/pixel"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Key Display -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text="PLEASE&gt;LOGIN HERE"
+            android:textColor="#FF6600"
+            android:textSize="13sp"
+            android:fontFamily="@font/pixel"
+            android:textStyle="bold"
+            android:background="@drawable/key_bg"
+            android:paddingVertical="12dp"
+            android:letterSpacing="0.05" />
+
+        <!-- Key Input Layout -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="16dp"
+            android:background="#1A1A1A"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=">"
+                android:textColor="#FF6600"
+                android:textSize="16sp"
+                android:fontFamily="@font/pixel"
+                android:textStyle="bold" />
+
+            <!-- ✅ ID ADDED: userkey -->
+            <EditText
+                android:id="@+id/userkey"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/pixel"
+                android:hint="ENTER ACTIVATION KEY"
+                android:inputType="textVisiblePassword"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#444444"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <!-- ✅ ID ADDED: paste -->
+            <ImageView
+                android:id="@+id/paste"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/baseline_content_paste_24"
+                android:tint="#FF6600"
+                android:background="?attr/selectableItemBackgroundBorderless" />
+        </LinearLayout>
+
+        <!-- ✅ ID ADDED: login Button -->
+        <Button
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="16dp"
+            android:text="ACCESS SYSTEM"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/button_orange_rounded"
+            android:fontFamily="@font/pixel"
+            android:stateListAnimator="@null" />
+
+        <!-- Hide Screen Recorder Switch -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Hide Screen Recorder"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:fontFamily="@font/pixel"
+                android:alpha="0.9" />
+
+            <!-- ✅ ID ADDED: hiderecording -->
+            <Switch
+                android:id="@+id/hiderecording"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:thumbTint="#FF6600"
+                android:trackTint="#333333" />
+        </LinearLayout>
+
+        <!-- ✅ ID ADDED: GetKey -->
+        <TextView
+            android:id="@+id/GetKey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+            android:text="[ GET ACCESS KEY ]"
+            android:textColor="#FF6600"
+            android:textSize="11sp"
+            android:fontFamily="@font/pixel"
+            android:textStyle="bold"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp" />
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="12dp"
+            android:background="#222222" />
+
+        <!-- Footer Players Info -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="USER PLAYERS  |  STATUS: UNDETECTED"
+            android:textColor="#888888"
+            android:textSize="9sp"
+            android:fontFamily="@font/pixel"
+            android:letterSpacing="0.05" />
+
+    </LinearLayout>
+
+</FrameLayout>
